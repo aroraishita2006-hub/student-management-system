@@ -21,7 +21,7 @@ def save_data():
     with open(File_name,"w") as f:
         for s in students:
             f.write(f"{s["name"]},{s["marks"][0]},{s['marks'][1]},{s['marks'][2]}\n")
-def add_data:
+def add_data():
     name=input("Enter name")
     marks=list(map(int,input("Enter marks in 3 subjects: ").split()))
     total=sum(marks)
@@ -35,7 +35,7 @@ def add_data:
     save_data(students)
     print("Student added successfully!")
 
-def view_data:
+def view_data():
     if not students:
         print("No records found!")
         return
@@ -49,7 +49,7 @@ def search_data(students):
     for s in students:
         if s["name"].lower()==name.lower():
              print(f"Found: {s['name']} -> {s['marks']} | {s['percentage']:.2f}%")
-            return
+             return
     print("Student not found!")
 
 def update_data(students):
@@ -70,7 +70,7 @@ def topper(students):
     print(f"Topper: {topper['name']} with {topper['percentage']:.2f}%")
 
 def main():
-    students = load_students()
+    students = load_data()
 
     while True:
         print("\n===== Student Management System =====")
@@ -102,7 +102,5 @@ def main():
         else:
             print("Invalid choice!")
 
-main()
-
-           
+m
 
